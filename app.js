@@ -5,12 +5,15 @@ const cors = require("cors");
 const passport = require("passport");
 const mongoose = require("mongoose");
 const config = require("./config/database");
+const Post = require("./angular-src/models/post");
 
 //konekcija na bazu -> config/database.js
+var Schema = mongoose.Schema;
 mongoose.connect(config.database, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 //provjera konekcije na bazu
 mongoose.connection.on("connected", () => {
   console.log("Connected to database" + config.database);
@@ -45,6 +48,30 @@ app.use("/users", users);
 //index route
 app.get("/", (req, res) => {
   res.send("Invalid Endpoint");
+});
+
+app.post("/api/posts", (req, res, next) => {
+  const post = new Post({
+    title: req.body.title,
+    content: req.body.content,
+  });
+  console.log(post);
+  post.save();
+  res.status(201).json({
+    message: "Post added successfully",
+  });
+});
+
+app.get("/api/posts", (req, res, next) => {
+  Post.find().then((documents) => {
+    //post od mongoosa koji je exportovan
+    console.log(documents);
+
+    res.status(200).json({
+      message: "posts fetched successfuly!",
+      posts: documents,
+    });
+  });
 });
 
 app.listen(port, () => {

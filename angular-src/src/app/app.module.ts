@@ -16,6 +16,12 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './services/auth.service';
 import { from } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
+
+import { Post } from './components/post.model';
+import { PostCreateComponent } from './components/post-create/post-create.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'post-create', component: PostCreateComponent },
 ];
 
 declare module '@angular/core' {
@@ -35,6 +42,9 @@ declare module '@angular/core' {
 @NgModule({
   declarations: [
     AppComponent,
+    PostCreateComponent,
+    PostListComponent,
+    HeaderComponent,
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
@@ -49,8 +59,15 @@ declare module '@angular/core' {
     HttpModule,
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  storedPosts: Post[] = [];
+
+  onPostAdded(post) {
+    this.storedPosts.push(post);
+  }
+}
