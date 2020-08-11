@@ -10,7 +10,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
+import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field'
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
@@ -18,6 +19,9 @@ import { AuthService } from './services/auth.service';
 import { from } from 'rxjs';
 import { UploadProductComponent } from './components/upload-product/upload-product.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -53,7 +57,12 @@ declare module '@angular/core' {
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
+  
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
 })
