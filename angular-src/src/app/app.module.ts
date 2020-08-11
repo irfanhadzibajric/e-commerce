@@ -16,6 +16,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './services/auth.service';
 import { from } from 'rxjs';
+import { UploadProductComponent } from './components/upload-product/upload-product.component';
+import { AppRoutingModule } from './app-routing.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,6 +43,7 @@ declare module '@angular/core' {
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
+    UploadProductComponent,
   ],
 
   imports: [
@@ -49,6 +52,7 @@ declare module '@angular/core' {
     HttpModule,
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
