@@ -10,7 +10,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
+import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field'
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
@@ -22,6 +23,9 @@ import { Post } from './components/post.model';
 import { PostCreateComponent } from './components/post-create/post-create.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { UploadProductComponent } from './components/upload-product/upload-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'post-create', component: PostCreateComponent },
+  { path: 'upload', component: UploadProductComponent },
 ];
 
 declare module '@angular/core' {
@@ -51,6 +56,7 @@ declare module '@angular/core' {
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
+    UploadProductComponent,
   ],
 
   imports: [
@@ -60,7 +66,12 @@ declare module '@angular/core' {
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
+  
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
 })
