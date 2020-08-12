@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -10,10 +11,11 @@ import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatInputModule } from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field'
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
@@ -61,6 +63,7 @@ declare module '@angular/core' {
     DashboardComponent,
     ProfileComponent,
     UploadProductComponent,
+    ProductDetailsComponent
   ],
 
   imports: [
@@ -73,9 +76,10 @@ declare module '@angular/core' {
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MDBBootstrapModule.forRoot()
   ],
-  
+
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
 })
