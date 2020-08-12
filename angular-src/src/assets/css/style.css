@@ -1,0 +1,167 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+/****************************HEDER**************************/
+
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #66b6c2;
+}
+
+#header-logo {
+    height: 50px;
+}
+
+header a {
+    color: white;
+    margin-left: 24px;
+}
+
+header a:hover {
+    color: white;
+}
+
+header a:visited {
+    color: white;
+}
+
+
+#menu-icon {
+    width: 32px;
+    color: white;
+}
+
+.solid-header {
+    position: fixed;
+    background-color: #3ad6c9;
+
+    transition: background-color 0.5s ease;
+}
+
+
+/****************************HERO SECTION**************************/
+
+#hero-section {
+    background-image: url(../../assets/best_online_clothes_shops.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #4133329c;
+    height: 100vh;
+}
+
+#hero-logo {
+    width: 300px;
+    padding-top: 86px;
+}
+
+#arrow-down {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    width: 64px;
+}
+
+
+/****************************CLOSET SECTION**************************/
+
+#menu-section {
+    background: #37bdb747;
+    padding-bottom: 30px;
+}
+
+.img-style {
+    width: 150px;
+    height: 200px;
+}
+
+.item-card {
+    border: solid;
+    border-color: #189aa0bd;
+    padding-top: 15px;
+}
+
+.details-info {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 53px;
+    top: 54px;
+    display: none;
+}
+
+#menu-section .item-card:hover .details-info {
+    display: block;
+}
+/****************************MAP SECTION**************************/
+
+
+#map {
+    height: 480px;
+    z-index: -1;
+}
+/****************************FUTER**************************/
+
+footer {
+    background: #17a2b8;
+}
+
+footer a img {
+    width: 32px;
+}
+
+@media (max-width: 768px) {
+
+    footer {
+        text-align: center;
+    }
+    #social-icons {
+        text-align: center !important;
+        margin-top: 8px;
+    }
+    
+}
+
+
+/****************************MOBILE MENU*************************/
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #312423ed;
+    z-index: 2;
+    display: none;
+}
+
+#mobile-menu a {
+    color: white;
+}
+
+#mobile-menu a:hover {
+    color: rgb(102 183 202);
+}
+
+#mobile-menu #close-btn {
+position: absolute;
+right: 23px;
+top: 8px;
+width: 36px;
+}

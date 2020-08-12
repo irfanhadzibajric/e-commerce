@@ -26,6 +26,11 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
     return false;
   }
+
+  onBurgerMenuClick() {
+    console.log('test')
+    return false;
+  }
 }
 
 //do 14min
