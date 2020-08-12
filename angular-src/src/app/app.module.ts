@@ -11,11 +11,11 @@ import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component'
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
@@ -63,7 +63,7 @@ declare module '@angular/core' {
     DashboardComponent,
     ProfileComponent,
     UploadProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
   ],
 
   imports: [
@@ -77,7 +77,7 @@ declare module '@angular/core' {
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
   ],
 
   providers: [ValidateService, AuthService],
