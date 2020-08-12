@@ -13,10 +13,13 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts() {
+    console.log('aaaa')
     this.http
       .get<{ message: string; posts: any }>('http://localhost:3000/api/posts')
       .pipe(
         map((postData) => {
+          console.log('aaaa')
+        console.log(postData)
           return postData.posts.map((post) => {
             return {
               title: post.title,
@@ -42,6 +45,7 @@ export class PostsService {
     this.http
       .post<{ message: string }>('http://localhost:3000/api/posts', post)
       .subscribe((responseData) => {
+        
         console.log(responseData.message);
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);

@@ -1,66 +1,50 @@
 <section id="menu-section">
-  <div class="container">
-      <div class="row">           
-          <div class="col-12 text-center py-5">
-              <h1>SELECTION FROM OUR CLOSET</h1>
-              <p>PICK YOUR BEST FIT</p>
-          </div>
-      </div>
-      <div class="row">             
-          <div class="col-sm-6 col-md-4 p-5 text-center">        
-              <div class="item-card">
-              <img class="details-info" src="../../../assets/view-details.png" alt="details">
-              <img class="img-fluid img-style" src="../../../assets/t-shirt2.jpg" alt="item 1">
-              <h5>Yellow Smile</h5>
-              <p class="lead my-3">Short description of article</p>
-              <p class="h4">13$</p>
-              </div>
-          </div>
-          <div class="col-sm-6 col-md-4 p-5 text-center">
-              <div class="item-card">
-              <img class="details-info" src="../../../assets/view-details.png" alt="details">
-              <img class="img-fluid img-style" src="../../../assets/dress.jpg" alt="item 2">
-              <h5>Pink Dress</h5>
-              <p class="lead my-3">Short description of article.</p>
-              <p class="h4">18$</p>
-          </div>
-          </div> 
-          <div class="col-sm-6 col-md-4 p-5 text-center">
-              <div class="item-card">
-              <img class="details-info" src="../../../assets/view-details.png" alt="details">
-              <img class="img-fluid img-style" src="../../../assets/pants.png" alt="item 3">
-              <h5>Black Walker</h5>
-              <p class="lead my-3">Short description of article.</p>
-              <p class="h4">20$</p>
-          </div>
-          </div>
-          <div class="col-sm-6 col-md-4 p-5 text-center">
-              <div class="item-card">
-              <img class="details-info" src="../../../assets/view-details.png" alt="details">
-              <img class="img-fluid img-style" src="../../../assets/dress1.jpg" alt="item 4">
-              <h5>Leaf Fall</h5>
-              <p class="lead my-3">Short description of article.</p>
-              <p class="h4">20$</p>
-          </div>
-          </div>
-          <div class="col-sm-6 col-md-4 p-5 text-center">
-              <div class="item-card">
-              <img class="details-info" src="../../../assets/view-details.png" alt="details">
-              <img class="img-fluid img-style" src="../../../assets/t-shirt3.jpg" alt="item 5">
-              <h5>Girl Power</h5>
-              <p class="lead my-3">Short description of article.</p>
-              <p class="h4">20$</p>
-          </div>
-          </div>
-          <div class="col-sm-6 col-md-4 p-5 text-center">
-              <div class="item-card">
-              <img class="details-info" src="../../../assets/view-details.png" alt="details">
-              <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6">
-              <h5>Head Turner</h5>
-              <p class="lead my-3">Short description of article.</p>
-              <p class="h4">20$</p>
-          </div>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center py-5">
+                <h1>SELECTION FROM OUR CLOSET</h1>
+                <p>PICK YOUR BEST FIT</p>
+            </div>
+        </div>
+        <div >
+            <div *ngIf="posts.length > 0">
+                <div *ngFor="let post of posts; index as i" >
+                    <div *ngIf="i % 3 === 0" class="row">
+                        <div class="col-sm-6 col-md-4 p-5 text-center">
+                            <div class="item-card">
+                                <img class="details-info" src="../../../assets/view-details.png" alt="details">
+                                <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6">
+                                <h5>{{posts[i].title}}</h5>
+                                <p class="lead my-3">{{posts[i].content}}</p>
+                                <p class="h4">20$</p>
+                            </div>
+                        </div>
+                        <div *ngIf="i+1 < posts.length - 1" class="col-sm-6 col-md-4 p-5 text-center">
+                            <div class="item-card">
+                                <img class="details-info" src="../../../assets/view-details.png" alt="details">
+                                <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6">
+                                <h5>{{posts[i+1].title}}</h5>
+                            <p class="lead my-3">{{posts[i+1].content}}</p>
+                                <p class="h4">20$</p>
+                            </div>
+                        </div>
+                        <div *ngIf="i+2 < posts.length - 1" class="col-sm-6 col-md-4 p-5 text-center">
+                            <div class="item-card">
+                                <img class="details-info" src="../../../assets/view-details.png" alt="details">
+                                <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6">
+                                <h5>{{posts[i+2].title}}</h5>
+                                <p class="lead my-3">{{posts[i+2].content}}</p>
+                                <p class="h4">20$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
 </section>
+
+
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">
+    No posts added yet!
+</p>
