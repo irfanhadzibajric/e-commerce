@@ -1,0 +1,68 @@
+<mdb-card cascade="true" wider="true">
+    <div class="popup">
+        <a class="close" (click)="closeModalEvent.emit($event)">&times;</a>
+        <div class="row">
+            <div class="col-md-4">
+
+                <!--Card image-->
+                <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+                    <mdb-card-img
+                        src="https://vp.lacuna.hr/wand/Content/slike/PORA210RD.jpg?width=700&height=700&scale=both&mode=pad">
+                    </mdb-card-img>
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--/Card image-->
+
+                <!--/.Card content-->
+
+
+
+            </div>
+            <div class="col-md-4">
+                <mdb-card-body cascade="true" class="text-center">
+                    <!--Card content-->
+                    <!--Title-->
+                    <h4 class="card-title">
+                        <strong>Majica</strong>
+                    </h4>
+                    <h5 class="indigo-text">
+                        <strong>32$</strong>
+                    </h5>
+
+
+                </mdb-card-body>
+                <mdb-card-text>
+                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium,
+                    totam rem
+                    aperiam.
+                </mdb-card-text>
+
+            </div>
+            <div class="col-md-4 text-center">
+
+                <span>ArikaKaiDesign</span>
+                <span>1,228 sales</span>
+                <span>|</span>
+                <span>
+                    <a class="review">rating</a>
+                </span>
+                <div class="quantity-container">
+                    <a (click)="minus()" type="button" size="sm">
+                        <i class="fas fa-minus"></i>
+                    </a>
+                    <input class="quantity" type="text" [value]="quantity">
+                    <a (click)="plus()" type="button" size="sm">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+
+                <button mdbBtn type="button" color="primary" mdbWavesEffect>
+                    <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
+                </button>
+            </div>
+        </div>
+    </div>
+</mdb-card>
+<div class="blur" (click)="closeModalEvent.emit($event)"> </div>
