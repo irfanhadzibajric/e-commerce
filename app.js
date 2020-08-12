@@ -55,7 +55,7 @@ app.post("/api/posts", (req, res, next) => {
     image: req.body.image,
     price: req.body.price,
     quantity: req.body.quantity,
-    size: req.body.size
+    size: req.body.size,
   });
   console.log(post);
   post.save();

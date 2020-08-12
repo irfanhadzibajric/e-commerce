@@ -1,22 +1,72 @@
-<h2 class="page-header">Login</h2>
-<form (submit)="onLoginSubmit()">
-  <div class="form-group">
-    <label>Username</label>
-    <input
-      type="text"
-      class="form-control"
-      [(ngModel)]="username"
-      name="username"
-    />
+<section id="cover" class="min-vh-100">
+  <div id="cover-caption">
+    <div class="container">
+      <div class="row text-white">
+        <div
+          class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4"
+        >
+          <p class="h4 mb-4">Sign in</p>
+          <div class="px-2">
+            <form
+              (submit)="onLoginSubmit()"
+              class="text-center border border-light p-5"
+            >
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="username"
+                  name="username"
+                  placeholder="Username"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  [(ngModel)]="password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+              <!-- Sign in button -->
+              <button
+                mdbBtn
+                color="info"
+                block="true"
+                class="my-4"
+                type="submit"
+                value="Login"
+              >
+                Sign in
+              </button>
+
+              <!-- Register -->
+              <p>
+                Not a member?
+                <a href="">Register</a>
+              </p>
+
+              <!-- Social login -->
+              <p>or sign in with:</p>
+
+              <a type="button" class="light-blue-text mx-2">
+                <mdb-icon fab icon="facebook"></mdb-icon>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                <mdb-icon fab icon="twitter"></mdb-icon>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                <mdb-icon fab icon="linkedin"></mdb-icon>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                <mdb-icon fab icon="github"></mdb-icon>
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input
-      type="password"
-      class="form-control"
-      [(ngModel)]="password"
-      name="password"
-    />
-  </div>
-  <input type="submit" class="btn btn-primary" value="Login" />
-</form>
+</section>
