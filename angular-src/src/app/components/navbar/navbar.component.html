@@ -56,16 +56,16 @@
         </span>
 
         <span
-          *ngIf="authService.loggedIn()"
+          *ngIf="!authService.loggedIn()"
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }"
           class="nav-item"
         >
           <a
             class="text-decoration-none text-uppercase"
-            [routerLink]="['/post-create']"
+            [routerLink]="['/upload']"
           >
-            Upload
+            Upload product
           </a>
         </span>
 
@@ -169,18 +169,7 @@
           </div>
 
           <div
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="nav-item"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/post-create']"
-            >
-              Upload
-            </a>
-          </div>
-          <div
+            *ngIf="authService.loggedIn()"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-item"

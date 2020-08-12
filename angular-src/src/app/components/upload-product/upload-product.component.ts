@@ -5,23 +5,29 @@ import { Post } from '../post.model';
 @Component({
   selector: 'app-upload-product',
   templateUrl: './upload-product.component.html',
-  styleUrls: ['./upload-product.component.css']
+  styleUrls: ['./upload-product.component.css'],
 })
+export class UploadProduct implements OnInit {
+  title: string = '';
+  image: string = '';
+  size: string = '';
+  price: string = '';
+  quantity: number = 0;
 
-export class UploadProductComponent implements OnInit {
-  title:string ='';
-  image:string ='';
-  size:string ='';
-  price:string ='';
-  quantity:number =0;
+  constructor(private service: PostsService) {}
 
-  constructor(private service: PostsService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-  doUpload(){
-    console.log("doo uploud"+this.title);
-    const post: Post = { id: null, title: this.title, image:this.image, size:this.size, price:this.price, quantity:this.quantity };
+  doUpload() {
+    console.log('doo uploud' + this.title);
+    const post: Post = {
+      id: null,
+      title: this.title,
+      image: this.image,
+      size: this.size,
+      price: this.price,
+      quantity: this.quantity,
+    };
     this.service.addPost(post);
   }
 }
