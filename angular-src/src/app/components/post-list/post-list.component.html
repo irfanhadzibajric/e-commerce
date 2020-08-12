@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div *ngIf="i+2 < posts.length - 1" class="col-sm-6 col-md-4 p-5 text-center">
-                            <div class="item-card" (click)="openProductModal(posts)">
+                            <div class="item-card" (click)="openProductModal(posts[i+2])">
                                 <img class="details-info" src="../../../assets/view-details.png" alt="details">
                                 <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6">
                                 <h5>{{posts[i+2].title}}</h5>
