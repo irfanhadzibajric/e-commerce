@@ -12,6 +12,8 @@ router.post("/register", (req, res, next) => {
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
+    address: req.body.address,
+    number: req.body.number,
   });
 
   User.addUser(newUser, (err, user) => {
@@ -49,6 +51,8 @@ router.post("/authenticate", (req, res, next) => {
             name: user.name,
             username: user.username,
             email: user.email,
+            address: user.address,
+            number: user.number,
           },
         });
       } else {

@@ -11,10 +11,10 @@ import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component'
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
@@ -29,12 +29,12 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { UploadProductComponent } from './components/upload-product/upload-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'user', component: UserDetailsComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'post-create', component: PostCreateComponent },
@@ -63,7 +63,7 @@ declare module '@angular/core' {
     DashboardComponent,
     UploadProductComponent,
     ProductDetailsComponent,
-    UserDetailsComponent
+    ProfileComponent,
   ],
 
   imports: [
@@ -77,7 +77,7 @@ declare module '@angular/core' {
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
   ],
 
   providers: [ValidateService, AuthService],

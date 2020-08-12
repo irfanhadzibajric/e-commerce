@@ -13,17 +13,17 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts() {
-    console.log('aaaa')
     this.http
       .get<{ message: string; posts: any }>('http://localhost:3000/api/posts')
       .pipe(
         map((postData) => {
-          console.log('aaaa')
-        console.log(postData)
           return postData.posts.map((post) => {
             return {
               title: post.title,
+              price: post.price,
               content: post.content,
+              quantity: post.quantity,
+              size: post.size,
               id: post._id,
             };
           });
@@ -39,14 +39,30 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
-  addPost(post: Post) {
-    
+  addPost(
+    title: string,
+    price: string,
+    content: string,
+    quantity: number,
+    size: string
+  ) {
+    const post: Post = {
+      id: null,
+      title: title,
+      price: price,
+      content: content,
+      quantity: quantity,
+      size: size,
+    };
 
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/posts', post)
+      .post<{ message: string; postId: string }>(
+        'http://localhost:3000/api/posts',
+        post
+      )
       .subscribe((responseData) => {
-        
-        console.log(responseData.message);
+        const id = responseData.postId;
+        post.id = id;
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
       });
@@ -54,9 +70,37 @@ export class PostsService {
 
   deletePost(postId: string) {
     this.http
-      .delete('http://localhost:3000/api/posts' + postId)
+      .delete('http://localhost:3000/api/posts/' + postId)
       .subscribe(() => {
-        console.log('deleted');
+        const updatedPost = this.posts.filter((post) => post.id !== postId);
+        this.posts = updatedPost;
+        this.postsUpdated.next([...this.posts]);
+      });
+  }
+
+  findPost(postId: string) {
+    this.http
+      .get<{ message: string; posts: any }>(
+        'http://localhost:3000/api/posts/' + postId
+      )
+      .pipe(
+        map((postData) => {
+          const updatedPost = this.posts.filter((post) => post.id !== postId);
+          return postData.posts.map((updatedPost) => {
+            return {
+              title: updatedPost.title,
+              price: updatedPost.price,
+              content: updatedPost.content,
+              quantity: updatedPost.quantity,
+              size: updatedPost.size,
+              id: updatedPost._id,
+            };
+          });
+        })
+      )
+      .subscribe((tPost) => {
+        this.posts = tPost;
+        this.postsUpdated.next([...this.posts]);
       });
   }
 }
