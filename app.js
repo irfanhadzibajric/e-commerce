@@ -30,7 +30,6 @@ const port = 3000;
 
 //CORS
 app.use(cors());
-
 //set static folder - ovaj kod se load-a na root-u
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -53,11 +52,14 @@ app.get("/", (req, res) => {
 app.post("/api/posts", (req, res, next) => {
   const post = new Post({
     title: req.body.title,
-    content: req.body.content,
+    image: req.body.image,
+    price: req.body.price,
+    quantity: req.body.quantity,
+    size: req.body.size
   });
   console.log(post);
   post.save();
-  res.status(201).json({
+  res.status(201).send({
     message: "Post added successfully",
   });
 });

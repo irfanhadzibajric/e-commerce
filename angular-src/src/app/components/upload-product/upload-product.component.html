@@ -1,12 +1,12 @@
 <div style="margin-left: 2cm;">
   <mat-form-field class="example-full-width" style="width: 25%; margin-top: 3cm;">
     <mat-label>Title of your product</mat-label>
-    <input matInput placeholder="Ex. dress" value=""/>
+    <input matInput placeholder="Ex. dress" value="" [(ngModel)]="title"/>
   </mat-form-field>
 <br><br>
   <mat-form-field class="example-full-width" style="width: 25%;">
     <mat-label>Size of your product</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="size">
       <mat-option value="XS">Extra Small</mat-option>
       <mat-option value="S">Small</mat-option>
       <mat-option value="M">Medium</mat-option>
@@ -17,20 +17,22 @@
   <br><br>
   <mat-form-field class="example-full-width" style="width: 25%;">
     <mat-label>Quantity of your product</mat-label>
-    <input matInput placeholder="Ex. 10" type="number" value=""/>
+    <input matInput placeholder="Ex. 10" type="number" value="" [(ngModel)]="quantity"/>
   </mat-form-field>
   <br><br>
   <mat-form-field class="example-full-width" style="width: 25%;">
     <mat-label>Price of your product</mat-label>
-    <input matInput placeholder="Ex. 10$" type="string" value=""/>
+    <input matInput placeholder="Ex. 10$" type="string" value=""  [(ngModel)]="price"/>
   </mat-form-field>
   <br><br>
-  <mat-form-field class="example-full-width" style="width: 25%;">
+  <mat-form-field class="example-full-width" style="width: 25%;" >
     <mat-label>Import image o product</mat-label>
-    <input matInput placeholder="https://media.missguided.com/s/missguided/DD925864_set/1/red-ditsy-floral-print-skater-dress" type="string" value=""/>
-  </mat-form-field>
+    <input matInput placeholder="https://media.missguided.com/s/missguided/DD925864_set/1/red-ditsy-floral-print-skater-dress" 
+    type="string" value="" [(ngModel)]="image"/>
+  </mat-form-field><br>
+  <img [src]="image" style="width: 120px;height: 120px;" alt="">
   <br><br>
-  <button class="btn btn-primary">Upload</button>
+  <button class="btn btn-primary" (click)="doUpload()">Upload</button>
 
 </div>
   
