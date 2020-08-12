@@ -1,9 +1,8 @@
 <mdb-card cascade="true" wider="true">
-    <div class="popup">
+    <div class="popup animate__animated animate__fadeInDown">
         <a class="close" (click)="closeModalEvent.emit($event)">&times;</a>
         <div class="row">
             <div class="col-md-4">
-
                 <!--Card image-->
                 <div class="view view-cascade overlay waves-light" mdbWavesEffect>
                     <mdb-card-img
@@ -13,35 +12,23 @@
                         <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
-                <!--/Card image-->
-
-                <!--/.Card content-->
-
-
-
             </div>
             <div class="col-md-4">
                 <mdb-card-body cascade="true" class="text-center">
                     <!--Card content-->
                     <!--Title-->
                     <h4 class="card-title">
-                        <strong>Majica</strong>
+                        <strong> {{product.title}}</strong>
                     </h4>
                     <h5 class="indigo-text">
                         <strong>32$</strong>
                     </h5>
-
-
                 </mdb-card-body>
                 <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium,
-                    totam rem
-                    aperiam.
+                    {{product.content}}
                 </mdb-card-text>
-
             </div>
             <div class="col-md-4 text-center">
-
                 <span>ArikaKaiDesign</span>
                 <span>1,228 sales</span>
                 <span>|</span>
@@ -57,7 +44,6 @@
                         <i class="fas fa-plus"></i>
                     </a>
                 </div>
-
                 <button mdbBtn type="button" color="primary" mdbWavesEffect>
                     <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
                 </button>

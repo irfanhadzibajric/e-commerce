@@ -13,7 +13,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { ValidateService } from './services/validate.service';
@@ -30,13 +29,14 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { UploadProductComponent } from './components/upload-product/upload-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'user', component: UserDetailsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'profile', component: ProfileComponent },
   { path: 'post-create', component: PostCreateComponent },
   { path: 'upload', component: UploadProductComponent },
 ];
@@ -61,9 +61,9 @@ declare module '@angular/core' {
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent,
     UploadProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    UserDetailsComponent
   ],
 
   imports: [

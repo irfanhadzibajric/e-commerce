@@ -1,25 +1,13 @@
+<br><br><br><br><br><br><br><br>
 <div>
   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
     <div>
-      <input
-        type="text"
-        name="title"
-        ngModel
-        required
-        minlength="3"
-        #title="ngModel"
-      />
+      <input type="text" name="title" ngModel required minlength="3" #title="ngModel" />
       <div *ngIf="title.invalid">Please Enter a post title.</div>
     </div>
 
     <div>
-      <textarea
-        rows="6"
-        name="content"
-        ngModel
-        required
-        #content="ngModel"
-      ></textarea>
+      <textarea rows="6" name="content" ngModel required #content="ngModel"></textarea>
       <div *ngIf="content.invalid">Please Enter a post content.</div>
     </div>
     <button color="accent" type="submit">

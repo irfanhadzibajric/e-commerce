@@ -17,6 +17,8 @@
   background: white;
   z-index: 999;
   padding: 100px;
+  margin-left: 22%;
+
 }
 .blur{
   position: fixed;
