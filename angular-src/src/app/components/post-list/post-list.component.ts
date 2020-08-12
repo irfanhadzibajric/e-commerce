@@ -12,8 +12,10 @@ import { PostsService } from '../posts.service';
 export class PostListComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
   private postsSub: Subscription;
+  popup: boolean = false;
+  productDetail: any;
 
-  constructor(public postsService: PostsService) {}
+  constructor(public postsService: PostsService) { }
 
   ngOnInit() {
     this.postsService.getPosts();
@@ -29,5 +31,14 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.postsSub.unsubscribe();
+  }
+  openProductModal(product) {
+    this.productDetail = product;
+    this.popup = true;
+  }
+
+  closeModal() {
+    this.popup = false;
+    this.productDetail = null;
   }
 }
