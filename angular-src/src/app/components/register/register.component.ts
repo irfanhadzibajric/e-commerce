@@ -46,7 +46,6 @@ export class RegisterComponent implements OnInit {
 
     //validate email
     if (!this.validateService.validateEmail(user.email)) {
-      console.log();
       this.flashMessage.show('Please use a valid email', {
         cssClass: 'alert-danger',
         timeout: 3000,

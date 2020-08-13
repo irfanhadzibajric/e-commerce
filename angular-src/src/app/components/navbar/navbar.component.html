@@ -80,6 +80,19 @@
             About us
           </a>
         </span>
+        <span
+          *ngIf="authService.loggedIn()"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+        >
+          <a
+            class="text-decoration-none text-uppercase"
+            [routerLink]="['/admin']"
+          >
+            Admin
+          </a>
+        </span>
         <span>
           <a class="text-decoration-none text-uppercase" href="#map-section"
             >How to find us?</a
