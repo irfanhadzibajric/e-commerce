@@ -5,4 +5,5 @@ export interface Post {
   quantity: number;
   size: string;
   price: string;
+  content: string;
 }

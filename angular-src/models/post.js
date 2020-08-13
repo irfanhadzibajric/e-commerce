@@ -7,6 +7,7 @@ const postSchema = mongoose.Schema({
   quantity: { type: Number, required: true },
   size: { type: String, required: true },
   price: { type: String, required: true },
+  content: { type: String, required: true },
 });
 
 //model mongoosa
