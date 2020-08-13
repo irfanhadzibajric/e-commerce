@@ -1,53 +1,58 @@
 <mdb-card cascade="true" wider="true">
   <div class="popup animate__animated animate__fadeInDown">
-    <a class="close" (click)="closeModalEvent.emit($event)">&times;</a>
+    <a class="close">
+      <mdb-icon fas icon="angle-left" (click)="closeModalEvent.emit($event)"></mdb-icon>
+    </a>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <!--Card image-->
         <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-          <mdb-card-img
-            src="https://vp.lacuna.hr/wand/Content/slike/PORA210RD.jpg?width=700&height=700&scale=both&mode=pad">
+          <mdb-card-img src="{{product.image}}">
           </mdb-card-img>
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
       </div>
-      <div class="col-md-4">
-        <mdb-card-body cascade="true" class="text-center">
+      <div class="col-md-6">
+        <mdb-card-body cascade="true" class="text-left">
           <!--Card content-->
           <!--Title-->
           <h4 class="card-title">
-            <strong> {{ product.title }}</strong>
+            {{ product.title }}
           </h4>
-          <h5 class="indigo-text">
-            <strong>{{ product.price }}</strong>
-          </h5>
+          <div class="row detail-row">
+            <div class="col-md-6 price-row">
+              <div class="product-price">
+                <h4>PRICE</h4>
+                <h2 class="price">{{ product.price }}$</h2>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="quantity-container">
+                <h4>In stock: {{product.quantity}}</h4>
+                <a (click)="minus()" type="button" size="sm">
+                  <i class="fas fa-minus"></i>
+                </a>
+                <input class="quantity" type="text" [value]="quantity" />
+                <a (click)="plus()" type="button" size="sm">
+                  <i class="fas fa-plus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </mdb-card-body>
         <mdb-card-text>
-          {{ product.image }}
+          <h2 class="product-description">Description:</h2>
+          {{ product.content }}
         </mdb-card-text>
-      </div>
-      <div class="col-md-4 text-center">
-        <span>ArikaKaiDesign</span>
-        <span>1,228 sales</span>
-        <span>|</span>
-        <span>
-          <a class="review">rating</a>
-        </span>
-        <div class="quantity-container">
-          <a (click)="minus()" type="button" size="sm">
-            <i class="fas fa-minus"></i>
-          </a>
-          <input class="quantity" type="text" [value]="quantity" />
-          <a (click)="plus()" type="button" size="sm">
-            <i class="fas fa-plus"></i>
-          </a>
-        </div>
-        <button mdbBtn type="button" color="primary" mdbWavesEffect (click)="addToCart(product)">
+
+
+        <button mdbBtn class="addToCart" type="button" color="primary" mdbWavesEffect (click)="addToCart(product)">
           <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
         </button>
       </div>
+
     </div>
   </div>
 </mdb-card>
