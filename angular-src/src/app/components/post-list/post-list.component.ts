@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import rater from 'rater-js';
 
 import { Post } from '../post.model';
 import { PostsService } from '../posts.service';

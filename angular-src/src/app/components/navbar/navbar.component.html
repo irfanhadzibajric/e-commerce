@@ -49,9 +49,9 @@
         >
           <a
             class="text-decoration-none text-uppercase"
-            [routerLink]="['/dashboard']"
+            [routerLink]="['/home']"
           >
-            <i class="icon fa fa-home" aria-hidden="true"></i>
+            Home
           </a>
         </span>
 
@@ -65,7 +65,7 @@
             class="text-decoration-none text-uppercase"
             [routerLink]="['/upload']"
           >
-            <i class="icon fa fa-upload" aria-hidden="true"></i>
+            Upload
           </a>
         </span>
 
@@ -78,7 +78,7 @@
             class="text-decoration-none text-uppercase"
             [routerLink]="['/profile']"
           >
-            <i class="icon fa fa-user" aria-hidden="true"></i>
+            User
           </a>
         </span>
         <span *ngIf="authService.loggedIn()">
@@ -87,15 +87,48 @@
             (click)="onLogoutClick()"
             href="#"
           >
-            <i class="icon fas fa-sign-out-alt"></i>
+            Logout
           </a>
         </span>
         <span>
           <a class="text-decoration-none text-uppercase" href="#map-section"
-            ><i class="icon fa fa-map-marker" aria-hidden="true"></i
-          ></a>
+            >How to find us?</a
+          >
         </span>
-        <img class="shopping-cart" src="../../../assets/cart-shoping.png" alt="details" (click)="openShoppingCartModal()" >
+        <span
+          *ngIf="!authService.loggedIn() || authService.loggedIn()"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a
+            class="text-decoration-none text-uppercase"
+            [routerLink]="['/about']"
+          >
+            About us
+          </a>
+        </span>
+        <!--
+        <span
+          *ngIf="authService.loggedIn()"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+        >
+          <a
+            class="text-decoration-none text-uppercase"
+            [routerLink]="['/checkout']"
+          >
+            Checkout
+          </a>
+        </span>
+        -->
+
+        <img
+          class="shopping-cart"
+          src="../../../assets/cart-shoping.png"
+          alt="details"
+          (click)="openShoppingCartModal()"
+        />
       </div>
 
       <div class="d-md-none col-8 text-right">
@@ -205,6 +238,9 @@
   </div>
 </div>
 
-<app-shopping-cart *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
+<app-shopping-cart
+  *ngIf="popup"
+  [shoppingCart]="shoppingCart"
+  (closeModalEvent)="closeModal()"
+>
 </app-shopping-cart>
-
