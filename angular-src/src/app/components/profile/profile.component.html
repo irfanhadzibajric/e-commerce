@@ -4,9 +4,7 @@
       <div class="col-md-4">
         <!--Card image-->
         <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-          <mdb-card-img
-            src="https://image.flaticon.com/icons/png/512/17/17004.png"
-          >
+          <mdb-card-img src="https://image.flaticon.com/icons/png/512/17/17004.png">
           </mdb-card-img>
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -21,14 +19,11 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
-                <input
-                  mdbInput
-                  type="email"
-                  class="form-control"
-                  id="inputEmail4MD"
-                  placeholder="Email"
-                />
-                <label for="inputEmail4MD">Email: {{ user.email }}</label>
+
+                <input mdbInput type="email" class="form-control" [formControl]="profileForm.controls['email']"
+                  id="inputEmail4MD" placeholder="Email" />
+                <label for="inputEmail4MD">Email: </label>
+
               </div>
             </div>
             <!-- Grid column -->
@@ -42,14 +37,11 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
-                <input
-                  mdbInput
-                  type="text"
-                  class="form-control"
-                  id="inputAddressMD"
-                  placeholder="1234 Main St"
-                />
-                <label for="inputAddressMD">Address: {{ user.address }}</label>
+
+                <input mdbInput [formControl]="profileForm.controls['username']" type="text" class="form-control"
+                  id="inputAddressMD" placeholder="Username" />
+                <label for="inputAddressMD">User name: </label>
+
               </div>
             </div>
             <!-- Grid column -->
@@ -58,47 +50,18 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
-                <input
-                  mdbInput
-                  type="text"
-                  class="form-control"
-                  id="inputAddress2MD"
-                  placeholder="Name"
-                />
-                <label for="inputAddress2MD">Name: {{ user.name }}</label>
+
+                <input mdbInput [formControl]="profileForm.controls['name']" type="text" class="form-control"
+                  id="inputAddress2MD" placeholder="Name" />
+                <label for="inputAddress2MD">Name: </label>
               </div>
             </div>
-            <!-- Grid column -->
           </div>
-          <!-- Grid row -->
+          <button type="submit" (click)="updateProfile()" mdbBtn color="primary">Change</button>
 
-          <!-- Grid row -->
-          <div class="form-row">
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
-                <input
-                  mdbInput
-                  type="text"
-                  class="form-control"
-                  id="inputNumberMD"
-                  placeholder="11206-1117"
-                />
-                <label for="inputNumberMD">Number: {{ user.number }}</label>
-              </div>
-            </div>
-            <!-- Grid column -->
-          </div>
-          <!-- Grid row -->
-          <a type="submit" mdbBtn color="primary">Edit</a>
         </form>
         <!-- Extended material form grid -->
       </div>
     </div>
-  </div></mdb-card
->
+  </div>
+</mdb-card>
