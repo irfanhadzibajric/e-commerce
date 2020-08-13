@@ -95,6 +95,7 @@
             ><i class="icon fa fa-map-marker" aria-hidden="true"></i
           ></a>
         </span>
+        <img class="shopping-cart" src="../../../assets/cart-shoping.png" alt="details" (click)="openShoppingCartModal()" >
       </div>
 
       <div class="d-md-none col-8 text-right">
@@ -203,3 +204,7 @@
     </div>
   </div>
 </div>
+
+<app-shopping-cart *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
+</app-shopping-cart>
+

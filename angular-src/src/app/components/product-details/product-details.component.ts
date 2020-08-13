@@ -1,6 +1,6 @@
-import { Input, EventEmitter, Output } from '@angular/core';
+import { Input, EventEmitter, Output, Component, OnInit } from '@angular/core';
 
-import { Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from "../../services/shoppingCart.service";
 
 @Component({
     selector: 'app-product-details',
@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProductDetailsComponent implements OnInit {
     @Input('product') product: any;
     @Output() closeModalEvent = new EventEmitter();
-    constructor() { }
+    constructor(private cart: ShoppingCartService) { }
+
     ngOnInit(): void {
         console.log(this.product)
     }
@@ -22,10 +23,15 @@ export class ProductDetailsComponent implements OnInit {
             this.quantity = this.i
         }
     }
+
     minus() {
         if (this.i != 1) {
             this.i--;
             this.quantity = this.i
         }
+    }
+
+    addToCart(product){
+        this.cart.changeShoppingCart(product)
     }
 }

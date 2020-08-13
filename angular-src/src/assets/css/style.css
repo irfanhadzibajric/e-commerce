@@ -42,6 +42,13 @@ header a:visited {
     transition: background-color 0.5s ease;
 }
 
+.shopping-cart {
+    position: absolute;
+    width: 32px;
+    right: 20px;
+    top: 25px;
+}
+
 
 /****************************HERO SECTION**************************/
 
@@ -107,6 +114,15 @@ header a:visited {
 
 #menu-section .item-card:hover .details-info {
     display: block;
+}
+
+.buy-item {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 54px;
+    top: 349px;
+    
 }
 /****************************MAP SECTION**************************/
 
