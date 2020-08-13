@@ -43,10 +43,11 @@ export class LoginComponent implements OnInit {
     this.authService.authenticateUser(user).subscribe((data) => {
       if (data.success) {
         this.authService.storeUserData(data.token, data.user);
-        this.flashMessage.show('You are logged in!', {
+        this.openSnackBar("You are logged in!","Success")
+        /*this.flashMessage.show('You are logged in!', {
           cssClass: 'alert-success',
           tiemout: 5000,
-        });
+        });*/
         this.router.navigate(['home']);
       } else {
         this.openSnackBar("Wrong username and/or password","Warning")
