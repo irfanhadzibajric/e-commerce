@@ -174,9 +174,22 @@
           >
             <a
               class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/dashboard']"
+              [routerLink]="['/home']"
             >
-              Dashboard
+              Home
+            </a>
+          </div>
+
+          <div
+            *ngIf="!authService.loggedIn() || authService.loggedIn()"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a
+              class="mobile-menu-item text-decoration-none text-uppercase h3"
+              [routerLink]="['/about']"
+            >
+              About us
             </a>
           </div>
 
@@ -201,7 +214,7 @@
             >
           </div>
           <div
-            *ngIf="!authService.loggedIn()"
+            *ngIf="authService.loggedIn()"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
@@ -212,7 +225,7 @@
               Profile
             </a>
           </div>
-          <div *ngIf="!authService.loggedIn()">
+          <div *ngIf="authService.loggedIn()">
             <a
               class="mobile-menu-item text-decoration-none text-uppercase h3"
               (click)="onLogoutClick()"
