@@ -51,12 +51,12 @@
             class="text-decoration-none text-uppercase"
             [routerLink]="['/dashboard']"
           >
-            Dashboard
+            <i class="icon fa fa-home" aria-hidden="true"></i>
           </a>
         </span>
 
         <span
-          *ngIf="!authService.loggedIn()"
+          *ngIf="authService.loggedIn()"
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }"
           class="nav-item"
@@ -65,7 +65,7 @@
             class="text-decoration-none text-uppercase"
             [routerLink]="['/upload']"
           >
-            Upload product
+            <i class="icon fa fa-upload" aria-hidden="true"></i>
           </a>
         </span>
 
@@ -78,7 +78,7 @@
             class="text-decoration-none text-uppercase"
             [routerLink]="['/profile']"
           >
-            User
+            <i class="icon fa fa-user" aria-hidden="true"></i>
           </a>
         </span>
         <span *ngIf="authService.loggedIn()">
@@ -87,25 +87,13 @@
             (click)="onLogoutClick()"
             href="#"
           >
-            Logout
+            <i class="icon fas fa-sign-out-alt"></i>
           </a>
         </span>
         <span>
           <a class="text-decoration-none text-uppercase" href="#map-section"
-            >how to find us?</a
-          >
-        </span>
-        <span
-          *ngIf="!authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a
-            class="user-details text-decoration-none text-uppercase"
-            [routerLink]="['/user']"
-          >
-            <mdb-icon fas icon="user-check"></mdb-icon>
-          </a>
+            ><i class="icon fa fa-map-marker" aria-hidden="true"></i
+          ></a>
         </span>
       </div>
 
