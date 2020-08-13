@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-
 import { Post } from '../post.model';
 import { PostsService } from '../posts.service';
 
@@ -15,7 +14,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   popup: boolean = false;
   productDetail: any;
 
-  constructor(public postsService: PostsService) {}
+  constructor(public postsService: PostsService) { }
 
   ngOnInit() {
     this.postsService.getPosts();

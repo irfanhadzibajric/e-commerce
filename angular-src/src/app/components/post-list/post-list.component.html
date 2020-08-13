@@ -12,6 +12,7 @@
           <div *ngIf="i % 3 === 0" class="row">
             <div class="col-sm-6 col-md-4 p-5 text-center">
               <div class="item-card" (click)="openProductModal(posts[i])">
+
                 <img
                   class="details-info"
                   src="../../../assets/view-details.png"
@@ -43,7 +44,6 @@
                   alt="item 6"
                 />
                 <h5>{{ posts[i + 1].title }}</h5>
-
                 <p class="h4">{{ posts[i + 1].price }}$</p>
               </div>
             </div>
@@ -63,7 +63,6 @@
                   alt="item 6"
                 />
                 <h5>{{ posts[i + 2].title }}</h5>
-
                 <p class="h4">{{ posts[i + 2].price }}$</p>
               </div>
             </div>
@@ -73,7 +72,6 @@
     </div>
   </div>
 </section>
-
 <p class="info-text mat-body-1" *ngIf="posts.length <= 0">
   No posts added yet!
 </p>
@@ -83,3 +81,4 @@
   (closeModalEvent)="closeModal()"
 >
 </app-product-details>
+
