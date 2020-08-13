@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div
-                *ngIf="i + 1 <= posts.length - 1"
+                *ngIf="i + 1 < posts.length - 1"
                 class="col-sm-6 col-md-4 p-5 text-center"
               >
                 <div class="item-card" (click)="openProductModal(posts[i + 1])">
