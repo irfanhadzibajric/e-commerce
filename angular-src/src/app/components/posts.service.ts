@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { Post } from './post.model';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
@@ -42,9 +43,13 @@ export class PostsService {
 
   addPost(post: Post) {
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/posts', post)
+      .post<{ message: string; postId: string }>(
+        'http://localhost:3000/api/posts',
+        post
+      )
       .subscribe((responseData) => {
-        console.log(responseData.message);
+        const postId = responseData.postId;
+        post.id = postId;
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
       });

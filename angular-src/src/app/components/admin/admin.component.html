@@ -1,0 +1,29 @@
+<section id="menu-section">
+  <br /><br /><br /><br /><br />
+  <div class="container">
+    <div *ngIf="posts.length > 0">
+      <div *ngFor="let post of posts">
+        <div class="col-sm-6 col-md-4 p-5 text-center">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ post.image }}" alt="item 6" />
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-title">PRICE</p>
+              <h2 class="card-title">{{ post.price }} $</h2>
+              <button
+                onClick="window.location.reload()"
+                class="btn btn-primary"
+                (click)="onDelete(post.id)"
+              >
+                DELETE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">
+  No posts added yet!
+</p>
