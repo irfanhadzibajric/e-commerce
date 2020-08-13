@@ -14,9 +14,11 @@ export class UploadProductComponent implements OnInit {
   price: string = '';
   quantity: number = 0;
 
-  constructor(private service: PostsService) {}
+  constructor(private service: PostsService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   doUpload() {
     const post: Post = {
