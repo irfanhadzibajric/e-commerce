@@ -35,17 +35,22 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UploadProductComponent } from './components/upload-product/upload-product.component';
 import { AboutComponent } from './components/about/about.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'upload', component: UploadProductComponent },
+  {
+    path: 'upload',
+    component: UploadProductComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'about', component: AboutComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
 ];
 
 declare module '@angular/core' {
@@ -89,7 +94,7 @@ declare module '@angular/core' {
     MDBBootstrapModule.forRoot(),
   ],
 
-  providers: [ValidateService, AuthService, ShoppingCartService],
+  providers: [ValidateService, AuthService, ShoppingCartService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {
