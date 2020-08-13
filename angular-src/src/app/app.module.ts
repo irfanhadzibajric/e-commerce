@@ -11,8 +11,8 @@ import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component'
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component'
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UploadProductComponent } from './components/upload-product/upload-product.component';
+import { AboutComponent } from './components/about/about.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,8 +42,10 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'upload', component: UploadProductComponent },
-
+  { path: 'about', component: AboutComponent },
+  { path: 'checkout', component: CheckoutComponent },
 ];
 
 declare module '@angular/core' {
@@ -66,7 +70,9 @@ declare module '@angular/core' {
     ProductDetailsComponent,
     ProfileComponent,
     ShoppingCartComponent,
-    UploadProductComponent
+    UploadProductComponent,
+    AboutComponent,
+    CheckoutComponent,
   ],
 
   imports: [

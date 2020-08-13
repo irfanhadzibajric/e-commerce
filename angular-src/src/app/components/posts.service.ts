@@ -21,7 +21,7 @@ export class PostsService {
             return {
               title: post.title,
               price: post.price,
-              content: post.content,
+              image: post.image,
               quantity: post.quantity,
               size: post.size,
               id: post._id,
@@ -71,7 +71,7 @@ export class PostsService {
             return {
               title: updatedPost.title,
               price: updatedPost.price,
-              content: updatedPost.content,
+              image: updatedPost.image,
               quantity: updatedPost.quantity,
               size: updatedPost.size,
               id: updatedPost._id,

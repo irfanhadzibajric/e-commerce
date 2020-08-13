@@ -12,28 +12,57 @@
           <div *ngIf="i % 3 === 0" class="row">
             <div class="col-sm-6 col-md-4 p-5 text-center">
               <div class="item-card" (click)="openProductModal(posts[i])">
-                <img class="details-info" src="../../../assets/view-details.png" alt="details" />
-                <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6" />
+
+                <img
+                  class="details-info"
+                  src="../../../assets/view-details.png"
+                  alt="details"
+                />
+                <img
+                  class="img-fluid img-style"
+                  src="{{ posts[i].image }}"
+                  alt="item 6"
+                />
                 <h5>{{ posts[i].title }}</h5>
 
                 <p class="h4">{{ posts[i].price }}$</p>
               </div>
             </div>
-            <div *ngIf="i + 1 < posts.length - 1" class="col-sm-6 col-md-4 p-5 text-center">
+            <div
+              *ngIf="i + 1 <= posts.length - 1"
+              class="col-sm-6 col-md-4 p-5 text-center"
+            >
               <div class="item-card" (click)="openProductModal(posts[i + 1])">
-                <img class="details-info" src="`${{ posts[i + 1].image }}` " alt="details" />
-                <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6" />
+                <img
+                  class="details-info"
+                  src="../../../assets/view-details.png"
+                  alt="details"
+                />
+                <img
+                  class="img-fluid img-style"
+                  src="{{ posts[i].image }}"
+                  alt="item 6"
+                />
                 <h5>{{ posts[i + 1].title }}</h5>
-
                 <p class="h4">{{ posts[i + 1].price }}$</p>
               </div>
             </div>
-            <div *ngIf="i + 2 < posts.length - 1" class="col-sm-6 col-md-4 p-5 text-center">
+            <div
+              *ngIf="i + 2 < posts.length - 1"
+              class="col-sm-6 col-md-4 p-5 text-center"
+            >
               <div class="item-card" (click)="openProductModal(posts[i + 2])">
-                <img class="details-info" src="../../../assets/view-details.png" alt="details" />
-                <img class="img-fluid img-style" src="../../../assets/shorts.jpg" alt="item 6" />
+                <img
+                  class="details-info"
+                  src="../../../assets/view-details.png"
+                  alt="details"
+                />
+                <img
+                  class="img-fluid img-style"
+                  src="{{ posts[i + 2].image }}"
+                  alt="item 6"
+                />
                 <h5>{{ posts[i + 2].title }}</h5>
-
                 <p class="h4">{{ posts[i + 2].price }}$</p>
               </div>
             </div>
@@ -43,9 +72,13 @@
     </div>
   </div>
 </section>
-
 <p class="info-text mat-body-1" *ngIf="posts.length <= 0">
   No posts added yet!
 </p>
-<app-product-details *ngIf="popup" [product]="productDetail" (closeModalEvent)="closeModal()">
+<app-product-details
+  *ngIf="popup"
+  [product]="productDetail"
+  (closeModalEvent)="closeModal()"
+>
 </app-product-details>
+
