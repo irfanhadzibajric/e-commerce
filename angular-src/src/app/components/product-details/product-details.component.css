@@ -16,7 +16,7 @@
   width: 56%;
   background: white;
   z-index: 999;
-  padding: 100px;
+  padding: 70px;
   margin-left: 22%;
 
 }
@@ -32,5 +32,36 @@
 .close{
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
+}
+.card-title{
+  float:left;
+  font-size: 45px;
+  text-transform:uppercase;
+}
+.product-price{
+  margin-top: 30px;
+}
+.price{
+  font-size: 35px;
+  color: #72a207;
+}
+.detail-row{
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+  margin-top: 20px;
+}
+.price-row{
+  float: left;
+}
+.quantity-container{
+  margin-top: 36px;
+}
+
+.addToCart{
+  float: right;
+    margin-right: 60px;
+    border-radius: 30px;
+    height: 70px;
+    width: 50%;
 }
