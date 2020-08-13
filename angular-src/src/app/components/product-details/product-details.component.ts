@@ -10,6 +10,7 @@ import { ShoppingCartService } from "../../services/shoppingCart.service";
 export class ProductDetailsComponent implements OnInit {
     @Input('product') product: any;
     @Output() closeModalEvent = new EventEmitter();
+    
     constructor(private cart: ShoppingCartService) { }
 
     ngOnInit(): void {
@@ -32,6 +33,6 @@ export class ProductDetailsComponent implements OnInit {
     }
 
     addToCart(product){
-        this.cart.changeShoppingCart(product)
+        this.cart.changeShoppingCart(product, this.quantity)
     }
 }

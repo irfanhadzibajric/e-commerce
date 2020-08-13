@@ -37,12 +37,12 @@
 }
 
 .card-dimensions {
-  width: 200px;
-  height: 300px;
+  width: 400px;
+  height: 125px;
 }
 
 .width-popup{
-  width: 477px;
+  width: 445px;;
 }
 
 #delete-button{
@@ -52,4 +52,49 @@
 
 #close-button{
   z-index: 9999;
+}
+
+#img-size{
+  width: 187px;
+  height: 125px;
+}
+
+#body-size{
+  top: 15px;
+  position: absolute;
+  right: 30px;
+}
+
+#title-position{
+  position: absolute;
+    top: -10px;
+    right: 53px;
+    width: 43px;
+}
+
+#price-position{
+  position: absolute;
+    top: 36px;
+    right: 68px;
+
+}
+
+#quantity-position{
+  position: absolute;
+    top: 13px;
+    right: 72px;
+}
+
+#button-position{
+  position: absolute;
+  bottom: -70px;
+  left: -80px;
+}
+
+#checkout-button{
+  position: relative;
+    width: 260px;
+    margin-left: 100px;
+    font-size: 12px;
+    height: 31px;
 }
