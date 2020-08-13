@@ -32,7 +32,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { ProfileComponent } from './components/profile/profile.component';
-import { UploadProduct } from './components/upload-product/upload-product.component';
+import { UploadProductComponent } from './components/upload-product/upload-product.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -65,7 +65,8 @@ declare module '@angular/core' {
     DashboardComponent,
     ProductDetailsComponent,
     ProfileComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    UploadProductComponent
   ],
 
   imports: [
