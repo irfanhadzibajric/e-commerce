@@ -4,10 +4,10 @@
     border-radius: 7px;
     background-color: white;
     box-shadow: 5px 10px #8888884b;
-    transition: all 1s;
+    transition: all 0.4s;
 }
 .item-card:hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
     cursor: pointer;
 }
 .img-style{
