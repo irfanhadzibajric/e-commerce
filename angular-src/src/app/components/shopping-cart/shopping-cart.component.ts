@@ -14,7 +14,12 @@ export class ShoppingCartComponent implements OnInit {
     constructor(private cart: ShoppingCartService) { }
 
     ngOnInit() {
-        this.cart.currentList.subscribe(posts => this.posts = posts)
-        console.log(this.posts)
+        this.cart.currentList.subscribe(posts => {
+            this.posts = posts
+        })
+    }
+
+    deleteFromCart(post){
+        this.cart.deleteFromShoppingCart(post)
     }
 }

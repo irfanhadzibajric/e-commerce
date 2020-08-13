@@ -8,8 +8,8 @@ declare var ol: any;
 })
 
 export class MapComponent implements OnInit {
-  latitude: number = 18.5204;
-  longitude: number = 73.8567;
+  latitude: number = 43.840483;
+  longitude: number = 18.343583;
  
   map: any;
 
@@ -22,8 +22,8 @@ export class MapComponent implements OnInit {
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([73.8567, 18.5204]),
-        zoom: 8
+        center: ol.proj.fromLonLat([18.343583, 43.840483]),
+        zoom: 18
       })
     });
   }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
@@ -36,7 +36,11 @@ import { UploadProductComponent } from './components/upload-product/upload-produ
 import { AboutComponent } from './components/about/about.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AuthGuard } from './guards/auth.guard';
+<<<<<<< HEAD
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+=======
+import { AdminComponent } from './components/admin/admin.component';
+>>>>>>> 1c61804673a2d31166f466a291abeeae10a7892c
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,6 +49,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'admin', component: AdminComponent },
   {
     path: 'upload',
     component: UploadProductComponent,
@@ -79,11 +84,13 @@ declare module '@angular/core' {
     UploadProductComponent,
     AboutComponent,
     CheckoutComponent,
+    AdminComponent,
   ],
 
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Post } from '../post.model';
 import { PostsService } from '../posts.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-post-list',
@@ -14,7 +15,10 @@ export class PostListComponent implements OnInit, OnDestroy {
   popup: boolean = false;
   productDetail: any;
 
-  constructor(public postsService: PostsService) { }
+  constructor(
+    public postsService: PostsService,
+    public authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.postsService.getPosts();
@@ -24,13 +28,11 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.posts = posts;
       });
   }
-  onDelete(postId: string) {
-    this.postsService.deletePost(postId);
-  }
 
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
+
   openProductModal(product) {
     this.productDetail = product;
     this.popup = true;

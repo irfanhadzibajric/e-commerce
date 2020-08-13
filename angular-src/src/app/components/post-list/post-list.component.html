@@ -13,39 +13,28 @@
             <div class="col-sm-6 col-md-4 p-5 text-center">
               <div class="item-card" (click)="openProductModal(posts[i])">
                 <img
-                  class="details-info"
-                  src="../../../assets/view-details.png"
-                  alt="details"
-                />
-                <img
                   class="img-fluid img-style"
                   src="{{ posts[i].image }}"
                   alt="item 6"
                 />
-                <h5>{{ posts[i].title }}</h5>
-                <h6>{{ posts[i].content }}</h6>
-
-                <p class="h4">{{ posts[i].price }}$</p>
+                <h1 class="title">{{ posts[i].title }}</h1>
+                <p class="price">PRICE</p>
+                <h2 class="dollar">{{ posts[i].price }} $</h2>
               </div>
             </div>
             <div
-              *ngIf="i + 1 <= posts.length - 1"
+              *ngIf="i + 1 < posts.length - 1"
               class="col-sm-6 col-md-4 p-5 text-center"
             >
               <div class="item-card" (click)="openProductModal(posts[i + 1])">
                 <img
-                  class="details-info"
-                  src="../../../assets/view-details.png"
-                  alt="details"
-                />
-                <img
                   class="img-fluid img-style"
                   src="{{ posts[i].image }}"
                   alt="item 6"
                 />
-                <h5>{{ posts[i + 1].title }}</h5>
-                <h6>{{ posts[i + 1].content }}</h6>
-                <p class="h4">{{ posts[i + 1].price }}$</p>
+                <h1 class="title">{{ posts[i + 1].title }}</h1>
+                <p class="price">PRICE</p>
+                <h2 class="dollar">{{ posts[i + 1].price }} $</h2>
               </div>
             </div>
             <div
@@ -54,18 +43,13 @@
             >
               <div class="item-card" (click)="openProductModal(posts[i + 2])">
                 <img
-                  class="details-info"
-                  src="../../../assets/view-details.png"
-                  alt="details"
-                />
-                <img
                   class="img-fluid img-style"
                   src="{{ posts[i + 2].image }}"
                   alt="item 6"
                 />
-                <h5>{{ posts[i + 2].title }}</h5>
-                <h6>{{ posts[i + 2].content }}</h6>
-                <p class="h4">{{ posts[i + 2].price }}$</p>
+                <h1 class="title">{{ posts[i + 2].title }}</h1>
+                <p class="price">PRICE</p>
+                <h2 class="dollar">{{ posts[i + 2].price }} $</h2>
               </div>
             </div>
           </div>
