@@ -23,30 +23,33 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 }
-  openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action, {
-      duration: 2500,
+
+openSnackBar(message: string, action: string) {
+  this.snackBar.open(message, action, {
+    duration: 2500,
   })
 }
-  ifInputFieldEmpty(){
-    if (this.password && this.username){
-      return false
-    }
-    return true
-  }
-  onLoginSubmit() {
-    const user = {
-      username: this.username,
-      password: this.password,
-    };
 
-    this.authService.authenticateUser(user).subscribe((data) => {
-      if (data.success) {
-        this.authService.storeUserData(data.token, data.user);
-        this.openSnackBar("You are logged in!","Success")
-        /*this.flashMessage.show('You are logged in!', {
-          cssClass: 'alert-success',
-          tiemout: 5000,
+ifInputFieldEmpty(){
+  if (this.password && this.username){
+    return false
+  }
+  return true
+}
+
+onLoginSubmit() {
+  const user = {
+    username: this.username,
+    password: this.password,
+  };
+
+  this.authService.authenticateUser(user).subscribe((data) => {
+    if (data.success) {
+      this.authService.storeUserData(data.token, data.user);
+      this.openSnackBar("You are logged in!","Success")
+      /*this.flashMessage.show('You are logged in!', {
+        cssClass: 'alert-success',
+        tiemout: 5000,
         });*/
         this.router.navigate(['home']);
       } else {
