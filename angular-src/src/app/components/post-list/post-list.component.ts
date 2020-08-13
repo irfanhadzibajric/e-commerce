@@ -24,6 +24,7 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.posts = posts;
       });
   }
+
   onDelete(postId: string) {
     this.postsService.deletePost(postId);
   }
@@ -31,6 +32,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
+
   openProductModal(product) {
     this.productDetail = product;
     this.popup = true;
