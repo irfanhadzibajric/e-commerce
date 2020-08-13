@@ -19,7 +19,6 @@ export class UploadProductComponent implements OnInit {
   ngOnInit(): void {}
 
   doUpload() {
-    console.log('doo uploud' + this.title);
     const post: Post = {
       id: null,
       title: this.title,
@@ -28,6 +27,6 @@ export class UploadProductComponent implements OnInit {
       price: this.price,
       quantity: this.quantity,
     };
-    this.service.addPost(post);
+  this.service.addPost(post);
   }
 }
