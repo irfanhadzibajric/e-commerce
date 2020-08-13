@@ -36,6 +36,7 @@ import { UploadProductComponent } from './components/upload-product/upload-produ
 import { AboutComponent } from './components/about/about.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AdminComponent } from './components/admin/admin.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'admin', component: AdminComponent },
   {
     path: 'upload',
     component: UploadProductComponent,
@@ -78,6 +80,7 @@ declare module '@angular/core' {
     UploadProductComponent,
     AboutComponent,
     CheckoutComponent,
+    AdminComponent,
   ],
 
   imports: [

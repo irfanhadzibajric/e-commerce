@@ -51,7 +51,6 @@ export class AuthService {
 
   loggedIn() {
     return tokenNotExpired('id_token');
-    return true;
   }
 
   storeUserData(token, user) {

@@ -1,4 +1,4 @@
-<mdb-card cascade="true" wider="true">
+<mdb-card cascade="true" wider="true" style="height: 100%;">
   <div class="user-detail">
     <div class="row">
       <div class="col-md-4">
@@ -19,9 +19,11 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
+
                 <input mdbInput type="email" class="form-control" [formControl]="profileForm.controls['email']"
                   id="inputEmail4MD" placeholder="Email" />
                 <label for="inputEmail4MD">Email: </label>
+
               </div>
             </div>
             <!-- Grid column -->
@@ -35,9 +37,11 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
+
                 <input mdbInput [formControl]="profileForm.controls['username']" type="text" class="form-control"
                   id="inputAddressMD" placeholder="Username" />
                 <label for="inputAddressMD">User name: </label>
+
               </div>
             </div>
             <!-- Grid column -->
@@ -46,6 +50,7 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
+
                 <input mdbInput [formControl]="profileForm.controls['name']" type="text" class="form-control"
                   id="inputAddress2MD" placeholder="Name" />
                 <label for="inputAddress2MD">Name: </label>
@@ -53,6 +58,7 @@
             </div>
           </div>
           <button type="submit" (click)="updateProfile()" mdbBtn color="primary">Change</button>
+
         </form>
         <!-- Extended material form grid -->
       </div>
