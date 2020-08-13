@@ -29,6 +29,10 @@
   background: #00000082;
   z-index: 998;
 }
+.right{
+  margin-top: 52px;
+}  
+
 .close{
   position: absolute;
   top: 10px;
