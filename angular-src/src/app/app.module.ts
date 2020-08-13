@@ -25,12 +25,14 @@ import { from } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 
 import { Post } from './components/post.model';
+
 import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
-import { UploadProductComponent } from './components/upload-product/upload-product.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UploadProduct } from './components/upload-product/upload-product.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'upload', component: UploadProductComponent },
+
 ];
 
 declare module '@angular/core' {
@@ -60,7 +63,6 @@ declare module '@angular/core' {
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    UploadProductComponent,
     ProductDetailsComponent,
     ProfileComponent,
     ShoppingCartComponent

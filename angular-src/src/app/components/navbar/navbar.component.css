@@ -1,9 +1,12 @@
-.text-right{
-    padding-top: 21px;
-   
+.text-right {
+  padding-top: 21px;
 }
 
-.user-details{
-    padding-left: 7%;
-    padding-right: 3%;
+.user-details {
+  padding-left: 7%;
+  padding-right: 3%;
+}
+
+#icon {
+  width: fit-content;
 }
