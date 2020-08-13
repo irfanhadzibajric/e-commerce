@@ -14,9 +14,11 @@ export class UploadProductComponent implements OnInit {
   price: string = '';
   quantity: number = 0;
 
-  constructor(private service: PostsService) {}
+  constructor(private service: PostsService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   doUpload() {
     console.log('doo uploud' + this.title);
@@ -29,5 +31,6 @@ export class UploadProductComponent implements OnInit {
       quantity: this.quantity,
     };
     this.service.addPost(post);
+    console.log(post)
   }
 }
