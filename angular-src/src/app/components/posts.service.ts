@@ -25,6 +25,7 @@ export class PostsService {
               quantity: post.quantity,
               size: post.size,
               id: post._id,
+              content: post.content,
             };
           });
         })
@@ -75,6 +76,7 @@ export class PostsService {
               quantity: updatedPost.quantity,
               size: updatedPost.size,
               id: updatedPost._id,
+              content: updatedPost.content,
             };
           });
         })
