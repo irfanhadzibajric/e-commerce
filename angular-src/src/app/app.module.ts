@@ -36,6 +36,7 @@ import { UploadProductComponent } from './components/upload-product/upload-produ
 import { AboutComponent } from './components/about/about.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AuthGuard } from './guards/auth.guard';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -92,6 +93,7 @@ declare module '@angular/core' {
     MatFormFieldModule,
     MatSelectModule,
     MDBBootstrapModule.forRoot(),
+    MatSnackBarModule
   ],
 
   providers: [ValidateService, AuthService, ShoppingCartService, AuthGuard],
