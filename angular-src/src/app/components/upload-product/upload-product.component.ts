@@ -7,7 +7,7 @@ import { Post } from '../post.model';
   templateUrl: './upload-product.component.html',
   styleUrls: ['./upload-product.component.css'],
 })
-export class UploadProduct implements OnInit {
+export class UploadProductComponent implements OnInit {
   title: string = '';
   image: string = '';
   size: string = '';

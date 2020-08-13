@@ -56,7 +56,7 @@
         </span>
 
         <span
-          *ngIf="!authService.loggedIn()"
+          *ngIf="authService.loggedIn()"
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }"
           class="nav-item"
@@ -107,6 +107,7 @@
             <mdb-icon fas icon="user-check"></mdb-icon>
           </a>
         </span>
+        <img class="shopping-cart" src="../../../assets/cart-shoping.png" alt="details" (click)="openShoppingCartModal()" >
       </div>
 
       <div class="d-md-none col-8 text-right">
@@ -215,3 +216,7 @@
     </div>
   </div>
 </div>
+
+<app-shopping-cart *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
+</app-shopping-cart>
+

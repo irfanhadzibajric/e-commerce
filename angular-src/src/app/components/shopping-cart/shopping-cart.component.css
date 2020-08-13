@@ -1,0 +1,55 @@
+.quantity-button{
+  height: 5px;
+  width: 30%;
+}
+.quantity{
+  width: 10%;
+  border:none;
+  margin: 0px 4px 0px 11px;
+}
+.quantity-container{
+  margin: 5%;
+}
+.popup{
+  position: fixed;
+  top: 75px;
+  right: 0px;
+  width: 56%;
+  background: white;
+  z-index: 999;
+}
+
+.close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.scroll-model {
+  height: 550px;
+  overflow-y: auto;
+}
+
+.padding-model {
+  padding-left: 30px;
+  padding-top: 25px;
+  
+}
+
+.card-dimensions {
+  width: 200px;
+  height: 300px;
+}
+
+.width-popup{
+  width: 477px;
+}
+
+#delete-button{
+  position: absolute;
+  left: 45px;
+}
+
+#close-button{
+  z-index: 9999;
+}

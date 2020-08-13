@@ -11,7 +11,8 @@ import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component'
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -19,11 +20,11 @@ import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './services/auth.service';
+import { ShoppingCartService } from './services/shoppingCart.service';
 import { from } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 
 import { Post } from './components/post.model';
-import { PostCreateComponent } from './components/post-create/post-create.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { UploadProductComponent } from './components/upload-product/upload-product.component';
@@ -37,7 +38,6 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'post-create', component: PostCreateComponent },
   { path: 'upload', component: UploadProductComponent },
 ];
 
@@ -51,7 +51,6 @@ declare module '@angular/core' {
 @NgModule({
   declarations: [
     AppComponent,
-    PostCreateComponent,
     PostListComponent,
     HeaderComponent,
     NavbarComponent,
@@ -64,6 +63,7 @@ declare module '@angular/core' {
     UploadProductComponent,
     ProductDetailsComponent,
     ProfileComponent,
+    ShoppingCartComponent
   ],
 
   imports: [
@@ -80,7 +80,7 @@ declare module '@angular/core' {
     MDBBootstrapModule.forRoot(),
   ],
 
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, ShoppingCartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

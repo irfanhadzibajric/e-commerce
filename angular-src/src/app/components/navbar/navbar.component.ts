@@ -11,6 +11,8 @@ declare var $: any;
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  popup: boolean = false;
+  shoppingCart: any;
   constructor(
     public authService: AuthService,
     private router: Router,
@@ -32,6 +34,16 @@ export class NavbarComponent implements OnInit {
   onBurgerMenuClick() {
     $("#mobile-menu").toggle();
     return false;
+  }
+
+  openShoppingCartModal() {
+    this.shoppingCart = null;
+    this.popup = true;
+  }
+
+  closeModal() {
+    this.popup = false;
+    this.shoppingCart = null;
   }
 }
 

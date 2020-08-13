@@ -1,0 +1,41 @@
+<mdb-card cascade="true" wider="true">
+  <div class="popup width-popup">
+    <a id="close-button" class="close" (click)="closeModalEvent.emit($event)">&times;</a>
+    <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 scroll-model">
+      <div *ngIf="posts.length > 0">
+        <div *ngFor="let post of posts">
+          <div class="col-lg-2 mb-4 padding-model">
+            <!-- Card -->
+            <div class="card card-dimensions">
+              <!--Card image-->
+              <div class="view overlay">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                  alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title">{{post.title}}</h4>
+                <!--Text-->
+                <p class="card-text">{{post.content}}</p>
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <button mdbBtn type="button" class="btn btn-light-blue btn-md">DELETE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mdb-card>
+
+
+
+<!--<div class="col-md-4 text-center">
+    <button mdbBtn id="buy-button" type="button" color="primary" mdbWavesEffect>
+        <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>BUY
+    </button>
+</div>-->
