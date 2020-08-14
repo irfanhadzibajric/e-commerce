@@ -29,21 +29,27 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input id="quantity" type="number" name="quantity" class=" form-control" [value]="quantity" />
-              <button mdbBtn class="addToCart" type="button" color="primary" mdbWavesEffect
-                (click)="addToCart(product)">
-                <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
-              </button>
+              <div class="quantity-container">
+                <a (click)="minus()" type="button" size="sm">
+                  <i class="fas fa-minus"></i>
+                </a>
+                <input class="quantity" type="text" [value]="quantity" />
+                <a (click)="plus()" type="button" size="sm">
+                  <i class="fas fa-plus"></i>
+                </a>
+              </div>
             </div>
           </div>
         </mdb-card-body>
-        <div class="card-text">
+        <mdb-card-text>
           <h2 class="product-description">Description:</h2>
-          <p>{{ product.content }}</p>
-        </div>
+          {{ product.content }}
+        </mdb-card-text>
 
 
-
+        <button mdbBtn class="addToCart" type="button" color="primary" mdbWavesEffect (click)="addToCart(product)">
+          <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
+        </button>
       </div>
 
     </div>

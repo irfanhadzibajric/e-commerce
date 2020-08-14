@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Post } from './components/post.model';
 
+import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +36,7 @@ import { UploadProductComponent } from './components/upload-product/upload-produ
 import { AboutComponent } from './components/about/about.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AuthGuard } from './guards/auth.guard';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AdminComponent } from './components/admin/admin.component';
 
 const appRoutes: Routes = [
@@ -66,6 +67,7 @@ declare module '@angular/core' {
   declarations: [
     AppComponent,
     PostListComponent,
+    HeaderComponent,
     NavbarComponent,
     MapComponent,
     FooterComponent,

@@ -7,16 +7,13 @@
     text-align: center;
     display: flex;
     align-items: center;
-    position: sticky;
+    position: relative;
   }
-  #upload-container{
-    margin-top: 1vw;
-  }
+  
   #cover-caption {
     width: 100%;
     position: relative;
     z-index: 1;
-    margin-top: 0!important;
   }
   
   /* only used for background overlay not needed for centering */
