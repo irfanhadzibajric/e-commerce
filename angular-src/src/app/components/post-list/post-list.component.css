@@ -1,5 +1,5 @@
 .item-card{
-    height: 15vw;
+    height: 100%;
     border:none;
     border-radius: 7px;
     background-color: white;
@@ -33,9 +33,9 @@
 }
 .dollar{
     position: relative;
-    top: -32px;
-    left: 116px;
-    text-align: left;
-    font-size: 38px;
-    color: #72a207
+    left: -19%;
+    bottom: 36px;
+    text-align: right;
+    font-size: 2vw;
+    color: #72a207;
 }

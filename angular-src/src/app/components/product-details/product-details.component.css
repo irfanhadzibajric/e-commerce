@@ -30,9 +30,12 @@
   z-index: 998;
 }
 .right{
-  margin-top: 52px;
+  position: relative;
+    top: 2vw;
 }  
-
+h4{
+  font-size: 0.9vw;
+}
 .close{
   position: absolute;
   top: 10px;
@@ -40,14 +43,17 @@
 }
 .card-title{
   float:left;
-  font-size: 45px;
+  font-size: 2vw;
   text-transform:uppercase;
 }
 .product-price{
   margin-top: 30px;
 }
 .price{
-  font-size: 35px;
+  font-size: 3vw;
+  position: fixed;
+  margin: 6px;
+  top: 51ox;
   color: #72a207;
 }
 .detail-row{
@@ -58,14 +64,25 @@
 .price-row{
   float: left;
 }
-.quantity-container{
-  margin-top: 36px;
+#quantity{
+  position: relative;
+  top: 2vw;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .addToCart{
-  float: right;
-    margin-right: 60px;
-    border-radius: 30px;
-    height: 70px;
-    width: 50%;
+  position: relative;
+  border-radius: 7px;
+  font-size: 0.6vw;
+  bottom: 3v;
+  top: 3vw;
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 80%;
+}
+
+.card-text{
+  position: inherit;
+  padding-top: 10%;
 }
