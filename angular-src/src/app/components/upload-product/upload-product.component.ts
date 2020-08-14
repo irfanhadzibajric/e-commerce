@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../posts.service';
 import { Post } from '../post.model';
 
@@ -8,8 +8,6 @@ import { Post } from '../post.model';
   styleUrls: ['./upload-product.component.css'],
 })
 export class UploadProductComponent implements OnInit {
-  @Output() closeModalEvent = new EventEmitter();
-
   title: string = '';
   image: string = '';
   size: string = '';
@@ -17,9 +15,9 @@ export class UploadProductComponent implements OnInit {
   quantity: number = 0;
   content: string = '';
 
-  constructor(private service: PostsService) { }
+  constructor(private service: PostsService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   doUpload() {
     const post: Post = {
