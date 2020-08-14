@@ -2,121 +2,61 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <div
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
+        <div [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
           <a class="nav-link" [routerLink]="['/']">
-            <img
-              id="header-logo"
-              src="../../../assets/logo.svg"
-              alt="header logo"
-            />
+            <img id="header-logo" src="../../../assets/logo.svg" alt="header logo" />
           </a>
         </div>
       </div>
       <div class="d-none d-md-block col-8 text-right">
-        <span
-          *ngIf="!authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            [routerLink]="['/login']"
-          >
+        <span *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+          <a class="text-decoration-none text-uppercase" [routerLink]="['/login']">
             log in
           </a>
         </span>
-        <span
-          *ngIf="!authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            [routerLink]="['/register']"
-          >
+        <span *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+          <a class="text-decoration-none text-uppercase" [routerLink]="['/register']">
             Register
           </a>
         </span>
-        <span
-          *ngIf="!authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            [routerLink]="['/home']"
-          >
+        <span *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+          <a class="text-decoration-none text-uppercase" [routerLink]="['/home']">
             Home
           </a>
         </span>
-        <span
-          *ngIf="authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            [routerLink]="['/upload']"
-          >
+        <span *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item">
+          <a class="text-decoration-none text-uppercase" [routerLink]="['/upload']">
             Upload product
           </a>
         </span>
-        <span
-          *ngIf="!authService.loggedIn() || authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            [routerLink]="['/about']"
-          >
+        <span *ngIf="!authService.loggedIn() || authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+          <a class="text-decoration-none text-uppercase" [routerLink]="['/about']">
             About us
           </a>
         </span>
 
         <span>
-          <a class="text-decoration-none text-uppercase" href="#map-section"
-            >How to find us?</a
-          >
+          <a class="text-decoration-none text-uppercase" href="#map-section">How to find us?</a>
         </span>
-        <span
-          *ngIf="authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            [routerLink]="['/profile']"
-          >
+        <span *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+          <a class="text-decoration-none text-uppercase" [routerLink]="['/profile']">
             <i class="icon fa fa-user" aria-hidden="true"></i>
           </a>
         </span>
         <span *ngIf="authService.loggedIn()">
-          <a
-            class="text-decoration-none text-uppercase"
-            (click)="onLogoutClick()"
-            href="#"
-          >
+          <a class="text-decoration-none text-uppercase" (click)="onLogoutClick()" href="#">
             <i class="icon fas fa-sign-out-alt"></i>
           </a>
         </span>
-        <span
-          *ngIf="authService.loggedIn()"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a
-            class="text-decoration-none text-uppercase"
-            id="shopping"
-            (click)="openShoppingCartModal()"
-          >
+        <span *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+          <a class="text-decoration-none text-uppercase" id="shopping" (click)="openShoppingCartModal()">
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
           </a>
         </span>
@@ -124,114 +64,64 @@
 
       <div class="d-md-none col-8 text-right">
         <a id="menu-btn" (click)="onBurgerMenuClick()">
-          <img id="menu-icon" src="../../../assets/menu.png" alt="menu"
-        /></a>
+          <img id="menu-icon" src="../../../assets/menu.png" alt="menu" /></a>
       </div>
     </div>
   </div>
 </header>
 
 <div id="mobile-menu">
-  <a id="close-btn" (click)="onBurgerMenuClick()"
-    ><img
-      class="img-fluid"
-      src="../../../assets/close.button.png"
-      alt="close"
-    />
+  <a id="close-btn" (click)="onBurgerMenuClick()"><img class="img-fluid" src="../../../assets/close.button.png"
+      alt="close" />
   </a>
   <div class="container">
     <div class="row vh-100 align-items-center">
       <div class="col-12 text-center">
         <nav>
-          <div
-            *ngIf="!authService.loggedIn()"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/login']"
-            >
+          <div *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/login']">
               log in
             </a>
           </div>
-          <div
-            *ngIf="!authService.loggedIn()"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/register']"
-            >
+          <div *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/register']">
               Register
             </a>
           </div>
 
-          <div
-            *ngIf="!authService.loggedIn()"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/home']"
-            >
+          <div *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/home']">
               Home
             </a>
           </div>
 
-          <div
-            *ngIf="!authService.loggedIn() || authService.loggedIn()"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/about']"
-            >
+          <div *ngIf="!authService.loggedIn() || authService.loggedIn()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/about']">
               About us
             </a>
           </div>
 
-          <div
-            *ngIf="authService.loggedIn()"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="nav-item"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/upload']"
-            >
+          <div *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/upload']">
               Upload product
             </a>
           </div>
           <div>
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              href="#map-section"
-              >how to find us?</a
-            >
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" href="#map-section">how to find us?</a>
           </div>
-          <div
-            *ngIf="authService.loggedIn()"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              [routerLink]="['/profile']"
-            >
+          <div *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/profile']">
               Profile
             </a>
           </div>
           <div *ngIf="authService.loggedIn()">
-            <a
-              class="mobile-menu-item text-decoration-none text-uppercase h3"
-              (click)="onLogoutClick()"
-              href="#"
-            >
+            <a class="mobile-menu-item text-decoration-none text-uppercase h3" (click)="onLogoutClick()" href="#">
               Logout
             </a>
           </div>
@@ -240,9 +130,5 @@
     </div>
   </div>
 </div>
-<app-shopping-cart
-  *ngIf="popup"
-  [shoppingCart]="shoppingCart"
-  (closeModalEvent)="closeModal()"
->
+<app-shopping-cart *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
 </app-shopping-cart>
