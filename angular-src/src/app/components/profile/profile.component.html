@@ -1,8 +1,7 @@
-<mdb-card cascade="true" wider="true" style="height: 100%;">
+<mdb-card cascade="true" wider="true">
   <div class="user-detail">
     <div class="row">
       <div class="col-md-4">
-        <!--Card image-->
         <div class="view view-cascade overlay waves-light" mdbWavesEffect>
           <mdb-card-img src="https://image.flaticon.com/icons/png/512/17/17004.png">
           </mdb-card-img>
@@ -13,54 +12,38 @@
       </div>
       <div class="col-md-8">
         <form>
-          <!-- Grid row -->
           <div class="form-row">
-            <!-- Grid column -->
             <div class="col-md-6">
-              <!-- Material input -->
               <div class="md-form form-group">
-
-                <input mdbInput type="email" class="form-control" [formControl]="profileForm.controls['email']"
-                  id="inputEmail4MD" placeholder="Email" />
+                <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Email" />
                 <label for="inputEmail4MD">Email: </label>
-
               </div>
             </div>
-            <!-- Grid column -->
           </div>
-
-          <!-- Grid row -->
-
-          <!-- Grid row -->
           <div class="row">
-            <!-- Grid column -->
             <div class="col-md-6">
-              <!-- Material input -->
               <div class="md-form form-group">
-
-                <input mdbInput [formControl]="profileForm.controls['username']" type="text" class="form-control"
-                  id="inputAddressMD" placeholder="Username" />
-                <label for="inputAddressMD">User name: </label>
-
+                <input mdbInput type="text" class="form-control" id="inputAddressMD" placeholder="1234 Main St" />
+                <label for="inputAddressMD">Address: </label>
               </div>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
             <div class="col-md-6">
-              <!-- Material input -->
               <div class="md-form form-group">
-
-                <input mdbInput [formControl]="profileForm.controls['name']" type="text" class="form-control"
-                  id="inputAddress2MD" placeholder="Name" />
+                <input mdbInput type="text" class="form-control" id="inputAddress2MD" placeholder="Name" />
                 <label for="inputAddress2MD">Name: </label>
               </div>
             </div>
           </div>
-          <button type="submit" (click)="updateProfile()" mdbBtn color="primary">Change</button>
-
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" id="inputNumberMD" placeholder="11206-1117" />
+                <label for="inputNumberMD">Number: </label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" mdbBtn color="primary">Change</button>
         </form>
-        <!-- Extended material form grid -->
       </div>
     </div>
   </div>
