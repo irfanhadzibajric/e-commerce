@@ -30,3 +30,17 @@
     border-radius: 10px;
   }
   
+  #upload-window-style{
+    height: 86vh;
+  }
+  
+  #upload-border{
+    height: 473px;
+  }
+#upload-button-style{
+  position: relative;
+  bottom: 46px;
+  border-radius: 7px;
+}
+ 
+  

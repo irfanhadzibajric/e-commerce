@@ -13,7 +13,11 @@ header {
 }
 
 #header-logo {
-    height: 50px;
+    font-size: 32px;
+    height: 70px;
+    position: absolute;
+    top: -4px;
+    left: 13px;
 }
 
 header a {
@@ -33,7 +37,10 @@ header a:visited {
 #menu-icon {
     width: 32px;
     color: white;
+    position: relative;
+    bottom: 9px;
 }
+
 
 .solid-header {
     position: fixed;
@@ -70,7 +77,7 @@ header a:visited {
 }
 
 #hero-logo {
-    width: 300px;
+    width: 423px;
     padding-top: 86px;
 }
 

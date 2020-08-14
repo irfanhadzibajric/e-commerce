@@ -1,8 +1,6 @@
 <mdb-card cascade="true" wider="true">
-  <div class="popup width-popup">
-    <a id="close-button" class="close" (click)="closeModalEvent.emit($event)"
-      >&times;</a
-    >
+  <div id="border-radius" class="popup width-popup">
+    <a id="close-button" class="close" (click)="closeModalEvent.emit($event)">&times;</a>
     <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 scroll-model">
       <div *ngIf="posts.length > 0">
         <div *ngFor="let post of posts">
@@ -11,11 +9,8 @@
             <div class="card card-dimensions">
               <!--Card image-->
               <div id="img-size" class="view overlay">
-                <img
-                  class="card-img-top"
-                  src="{{ post.image }}"
-                  alt="Card image cap"
-                />
+                <img class="card-img-top" src="{{ post.image }}"
+                  alt="Card image cap">
                 <a href="#!">
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -23,40 +18,26 @@
               <!--Card content-->
               <div id="body-size" class="card-body">
                 <!--Title-->
-                <h4 id="title-position" class="card-title">{{ post.title }}</h4>
+                <h4 id="title-position" class="card-title">Item tipe: | {{post.title}} |</h4>
                 <!--Text-->
-                <h4 id="price-position" class="card-title">
-                  {{ post.price }}$
-                </h4>
+                <h4 id="price-position" class="card-title">Total (USD) | {{post.price}}$ |</h4>
                 <!--Text-->
-                <p id="quantity-position" class="card-text">
-                  x{{ post.quantity }}
-                </p>
+                <p id="quantity-position" class="card-text">Total Quantity: | x{{post.quantity}} |</p>
                 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <button
-                  mdbBtn
-                  type="button"
-                  id="button-position"
-                  class="btn btn-danger btn-sm"
-                  (click)="deleteFromCart(post)"
-                >
-                  DELETE
-                </button>
+                <button mdbBtn type="button" id="button-position" class="btn btn-danger btn-sm"
+                  (click)="deleteFromCart(post)"><i class="fas fa-trash-alt trash-size"></i></button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button
-      *ngIf="posts.length > 0"
-      mdbBtn
-      type="button"
-      id="checkout-button"
-      class="btn btn-success btn-sm btn-block"
-      [routerLink]="['checkout']"
-      (click)="closeModalEvent.emit($event)"
-    >
+
+    <div id="emty-cart" *ngIf="posts.length == 0">
+      <img id="cart-photo" src="../../../assets/emtyCartPhoto.jpeg">
+    </div>
+    <button *ngIf="posts.length > 0" mdbBtn type="button" id="checkout-button" class="btn btn-success btn-sm btn-block"
+      [routerLink]="['checkout']" (click)="closeModalEvent.emit($event)">
       <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>CHECKOUT
     </button>
   </div>

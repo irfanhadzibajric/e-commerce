@@ -18,7 +18,7 @@ export class CheckoutComponent implements OnInit {
     this.cart.currentList.subscribe((posts) =>{
       this.posts = posts
       this.posts.forEach(post => {
-        this.total += post.price
+        this.total += parseInt(post.price)
       });
     });
   }
