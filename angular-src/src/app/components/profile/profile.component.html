@@ -11,7 +11,7 @@
           </a>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8" id="details">
         <form>
           <!-- Grid row -->
           <div class="form-row">
@@ -20,8 +20,9 @@
               <!-- Material input -->
               <div class="md-form form-group">
 
-                <input mdbInput type="email" class="form-control" [formControl]="profileForm.controls['email']"
-                  id="inputEmail4MD" placeholder="Email" />
+                <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="{{user.email}}"
+                  readonly />
+
                 <label for="inputEmail4MD">Email: </label>
 
               </div>
@@ -37,10 +38,9 @@
             <div class="col-md-6">
               <!-- Material input -->
               <div class="md-form form-group">
-
-                <input mdbInput [formControl]="profileForm.controls['username']" type="text" class="form-control"
-                  id="inputAddressMD" placeholder="Username" />
-                <label for="inputAddressMD">User name: </label>
+                <input mdbInput type="text" class="form-control" id="inputAddressMD" placeholder="{{user.name}}"
+                  readonly />
+                <label for="inputAddressMD">Name: </label>
 
               </div>
             </div>
@@ -48,17 +48,18 @@
 
             <!-- Grid column -->
             <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
 
-                <input mdbInput [formControl]="profileForm.controls['name']" type="text" class="form-control"
-                  id="inputAddress2MD" placeholder="Name" />
-                <label for="inputAddress2MD">Name: </label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" id="inputNumberMD" placeholder="{{user.username}}"
+                  readonly />
+                <label for="inputNumberMD">Username: </label>
               </div>
             </div>
           </div>
-          <button type="submit" (click)="updateProfile()" mdbBtn color="primary">Change</button>
-
         </form>
         <!-- Extended material form grid -->
       </div>
