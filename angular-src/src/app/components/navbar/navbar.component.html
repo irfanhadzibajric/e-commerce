@@ -4,11 +4,11 @@
       <div class="col-4">
         <div [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
           <a class="nav-link" [routerLink]="['/']">
-            <img id="header-logo" src="../../../assets/logo.svg"  alt="header logo" />
+            <img id="header-logo" src="../../../assets/logo.svg" alt="header logo" />
           </a>
         </div>
       </div>
-      <div id="nav-bar-position" class="d-none d-md-block col-12 text-right">
+      <div class="d-none d-md-block col-8 text-right">
         <span *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
           <a class="text-decoration-none text-uppercase" [routerLink]="['/login']">
@@ -70,8 +70,7 @@
           </a>
         </span>
         <a id="menu-btn" (click)="onBurgerMenuClick()">
-          <img id="menu-icon" src="../../../assets/menu.png" alt="menu" />
-          </a>
+          <img id="menu-icon" src="../../../assets/menu.png" alt="menu" /></a>
       </div>
     </div>
   </div>
@@ -137,5 +136,6 @@
     </div>
   </div>
 </div>
-<app-shopping-cart class="shopping-cart-header" *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
-</app-shopping-cart>  
+<app-shopping-cart *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
+</app-shopping-cart>
+
