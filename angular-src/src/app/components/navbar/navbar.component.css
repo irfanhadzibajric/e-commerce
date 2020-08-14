@@ -5,7 +5,9 @@
   padding-left: 7%;
   padding-right: 3%;
 }
-
+#header{
+  height: 69px;
+}
 #icon {
   width: fit-content;
 }
