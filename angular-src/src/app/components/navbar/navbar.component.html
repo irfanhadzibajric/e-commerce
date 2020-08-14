@@ -63,6 +63,12 @@
       </div>
 
       <div class="d-md-none col-8 text-right">
+        <span *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+          <a class="text-decoration-none text-uppercase shopping-cart-mobile" id="shopping" (click)="openShoppingCartModal()">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </span>
         <a id="menu-btn" (click)="onBurgerMenuClick()">
           <img id="menu-icon" src="../../../assets/menu.png" alt="menu" /></a>
       </div>
@@ -132,3 +138,4 @@
 </div>
 <app-shopping-cart *ngIf="popup" [shoppingCart]="shoppingCart" (closeModalEvent)="closeModal()">
 </app-shopping-cart>
+
