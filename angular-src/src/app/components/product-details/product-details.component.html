@@ -1,14 +1,17 @@
 <mdb-card cascade="true" wider="true">
   <div class="popup animate__animated animate__fadeInDown">
     <a class="close">
-      <mdb-icon fas icon="angle-left" (click)="closeModalEvent.emit($event)"></mdb-icon>
+      <mdb-icon
+        fas
+        icon="angle-left"
+        (click)="closeModalEvent.emit($event)"
+      ></mdb-icon>
     </a>
     <div class="row">
       <div class="col-md-6">
         <!--Card image-->
         <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-          <mdb-card-img src="{{product.image}}">
-          </mdb-card-img>
+          <mdb-card-img src="{{ product.image }}"> </mdb-card-img>
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
@@ -29,10 +32,24 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input id="quantity" type="number" name="quantity" class=" form-control" [value]="quantity" />
-              <button mdbBtn class="addToCart" type="button" color="primary" mdbWavesEffect
-                (click)="addToCart(product)">
-                <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
+              <input
+                id="quantity"
+                type="number"
+                name="quantity"
+                class="form-control"
+                [(ngModel)]="quantity"
+                [value]="quantity"
+              />
+              <button
+                mdbBtn
+                class="addToCart"
+                type="button"
+                color="primary"
+                mdbWavesEffect
+                (click)="addToCart(product)"
+              >
+                <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to
+                card
               </button>
             </div>
           </div>
@@ -41,9 +58,7 @@
           <h2 class="product-description">Description:</h2>
           <p>{{ product.content }}</p>
         </div>
-
       </div>
-
     </div>
   </div>
 </mdb-card>
